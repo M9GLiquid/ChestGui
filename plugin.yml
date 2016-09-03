@@ -1,0 +1,14 @@
+name: Chest Gui
+main: eu.kingconquest.chestgui.Main
+softdepend: []
+version: 0.1
+author: Thomas Lundqvist@KingConquest.eu
+description: Chest Gui plugin 0.1
+
+commands:
+  c:
+    description: Main Commmand
+  cg:
+    description: Main Commmand
+  chest:
+    description: Main Commmand
