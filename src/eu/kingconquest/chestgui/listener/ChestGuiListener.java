@@ -1,4 +1,4 @@
-package eu.kingconquest.chestgui.listener;
+package eu.kingconquest.conquest.core.listener;
 
 import java.util.UUID;
 
@@ -8,7 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 
-import eu.kingconquest.chestgui.event.ChestGui;
+import eu.kingconquest.chestgui.core.gui.ChestGui;
+
 
 public class ChestGuiListener implements Listener{
 	
@@ -16,25 +17,21 @@ public class ChestGuiListener implements Listener{
     public void onClick(InventoryClickEvent e){
         if (!(e.getWhoClicked() instanceof Player))
             return;
-        
         Player p = (Player) e.getWhoClicked();
-
         UUID inventoryUUID = ChestGui.openInventories.get(p.getUniqueId());
-        if (inventoryUUID != null){
+        if (!Validate.isNull(inventoryUUID)){
             e.setCancelled(true);
             ChestGui GUI = ChestGui.getInventoriesByUUID().get(inventoryUUID);
+            GUI.setClickType(e.getClick());
             ChestGui.onGuiAction action = GUI.getActions().get(e.getSlot());
-          
-            if (action != null)
-                action.click(p);
+    		if (!Validate.isNull(action))
+                action.onClick(p);
         }
     }
     
     @EventHandler
     public void onClose(InventoryCloseEvent e){
-        Player player = (Player) e.getPlayer();
-        UUID playerUUID = player.getUniqueId();
-      
-        ChestGui.openInventories.remove(playerUUID);
+        Player p = (Player) e.getPlayer();
+        ChestGui.openInventories.remove(p.getUniqueId());
     }
 }
