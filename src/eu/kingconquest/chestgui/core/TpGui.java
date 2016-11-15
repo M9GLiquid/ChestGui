@@ -3,7 +3,7 @@ package eu.kingconquest.chestgui.core;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import eu.kingconquest.chestgui.event.ChestGui;
+import eu.kingconquest.chestgui.core.gui.ChestGui;
 
 // Example 
 public class TpGui extends ChestGui{

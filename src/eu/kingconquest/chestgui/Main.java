@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import eu.kingconquest.chestgui.commands.Test;
-import eu.kingconquest.chestgui.event.ChestGui;
+import eu.kingconquest.chestgui.core.gui.ChestGui;
 import eu.kingconquest.chestgui.listener.ChestGuiListener;
 
 public class Main extends JavaPlugin implements Listener{
