@@ -67,7 +67,14 @@ public abstract class ChestGui extends Pagination{
 		clearSlots();
 	}
 	public abstract void display();
-	
+
+	public void closeButton(){
+        setItem(8, new ItemStack(Material.BARRIER), player -> {
+            close(player);
+        }, "§4Close!","§1-----------------"
+        		+ "\n§cClick to close!\n"
+        		);
+	}
 	public void backButton(Object object){
 		ChestGui chestGui = (ChestGui) object;
 		setItem(8, new ItemStack(Material.ARROW), player -> {
@@ -76,6 +83,7 @@ public abstract class ChestGui extends Pagination{
 		}, "§4<< Back","§1-----------------\n"
 				+ "§cClick to go Home");
 	}
+	
 	public void clearSlots(){
 		for(int i = 0; i < this.invSize; i++) 
 			setItem(i, new ItemStack(Material.AIR), player -> {},null, null);

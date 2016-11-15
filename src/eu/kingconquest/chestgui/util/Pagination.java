@@ -3,7 +3,8 @@ package eu.kingconquest.chestgui.util;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import eu.kingconquest.conquest.core.gui.ChestGui;
+import eu.kingconquest.chestgui.core.gui.ChestGui;
+
 
 public class Pagination{
     private int limit = 45;

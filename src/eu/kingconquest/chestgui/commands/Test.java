@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import eu.kingconquest.chestgui.Main;
-import eu.kingconquest.chestgui.core.TpGui;
+import eu.kingconquest.chestgui.core.gui.TpGui;
 
 public class Test implements CommandExecutor{
 	private static Player p;
